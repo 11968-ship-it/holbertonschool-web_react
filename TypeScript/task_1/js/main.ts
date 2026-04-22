@@ -1,4 +1,4 @@
-// Define the Teacher interface
+// Teacher interface
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -6,17 +6,32 @@ interface Teacher {
   yearsOfExperience?: number;
   location: string;
 
-  // Allow additional properties with string keys and any type
+  // مح بإضافة أي خاصية إضافية
   [key: string]: any;
 }
 
-// Create an example teacher object
+// Directors interface extending Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// Example Teacher
 const teacher3: Teacher = {
   firstName: "John",
   lastName: "Doe",
   fullTimeEmployee: false,
   location: "London",
-  contract: false, // extra property
+  contract: false,
+};
+
+// Example Director
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  location: "London",
+  fullTimeEmployee: true,
+  numberOfReports: 17,
 };
 
 console.log(teacher3);
+console.log(director1);
