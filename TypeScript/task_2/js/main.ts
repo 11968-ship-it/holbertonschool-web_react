@@ -17,3 +17,19 @@ function executeWork(employee: Director | TeacherClass): string {
 // Expected tests
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+
+
+// String literal type
+type Subjects = "Math" | "History";
+
+// Function implementation
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  return "Teaching History";
+}
+
+// Expected tests
+console.log(teachClass("Math"));
+console.log(teachClass("History"));
