@@ -5,15 +5,23 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-
-  // مح بإضافة أي خاصية إضافية
   [key: string]: any;
 }
 
-// Directors interface extending Teacher
+// Directors interface
 interface Directors extends Teacher {
   numberOfReports: number;
 }
+
+// Function interface
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Function implementation
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
 
 // Example Teacher
 const teacher3: Teacher = {
@@ -33,5 +41,6 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 
+console.log(printTeacher("John", "Doe"));
 console.log(teacher3);
 console.log(director1);
